@@ -39,10 +39,10 @@ namespace BeachSys.Controllers
             return View();
         }
 
-        public IActionResult Index(string cpf)
+        public IActionResult Index()
         {
-            // TODO
-            return View();
+            var armarios = _context.Armarios.ToList();
+            return View(armarios);
         }
     }
 }

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BeachSys.Migrations
 {
     [DbContext(typeof(BeachSysContext))]
-    [Migration("20220612145019_PrimeiraMigration")]
+    [Migration("20220612152114_PrimeiraMigration")]
     partial class PrimeiraMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

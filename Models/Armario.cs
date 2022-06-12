@@ -17,7 +17,7 @@ namespace BeachSys.Models
         public int PontoX { get; set; }
         [Required(ErrorMessage = "Este campo é obrigatorio")]
         public int PontoY { get; set; }
-        public ICollection<Compartimento> Compartimentos { get; set; }
+        public virtual ICollection<Compartimento> Compartimentos { get; set; } = new List<Compartimento>();
         [ForeignKey("Admin")]
         public int AdminID { get; set; }
         public Admin Admin { get; set; }

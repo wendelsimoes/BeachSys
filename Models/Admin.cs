@@ -4,6 +4,6 @@ namespace BeachSys.Models
 {
     public class Admin : Usuario
     {
-        public ICollection<Armario> Armarios { get; set; }
+        public virtual ICollection<Armario> Armarios { get; set; }
     }
 }

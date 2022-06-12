@@ -1,0 +1,27 @@
+@model IEnumerable<BeachSys.Models.Armario>
+
+@{
+    ViewData["Title"] = "Armários";
+}
+
+<table id="table">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>PontoX</th>
+            <th>PontoY</th>
+            <th>Compartimentos disponíveis</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var armario in Model)
+        {
+            <tr>
+                <td>@armario.Nome</td>
+                <td>@armario.PontoX</td>
+                <td>@armario.PontoY</td>
+                <td>@armario.CompartimentosDisponiveis()</td>
+            </tr>
+        }
+    </tbody>
+</table>

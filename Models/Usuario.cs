@@ -20,6 +20,6 @@ namespace BeachSys.Models
         [MaxLength(100, ErrorMessage = "Excedeu o tamanho permitido")]
         [Required(ErrorMessage = "Este campo é obrigatorio")]
         public string Email { get; set; }
-        public Compartimento Compartimento { get; set; }
+        public virtual Compartimento Compartimento { get; set; }
     }
 }

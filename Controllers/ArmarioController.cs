@@ -24,6 +24,8 @@ namespace BeachSys.Controllers
         {
             if (ModelState.IsValid)
             {
+                var admin = _context.Admins.FirstOrDefault(a => a.CPF == "admin");
+                armario.Admin = admin;
                 _context.Add(armario);
                 _context.SaveChanges();
                 return RedirectToAction("Index", new {cpf = "admin"});

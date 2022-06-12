@@ -11,6 +11,7 @@
             <th>Comprimento</th>
             <th>Largura</th>
             <th>Disponivel</th>
+            <th>#</th>
         </tr>
     </thead>
     <tbody>
@@ -22,15 +23,13 @@
                     <td>@compartimento.Numero</td>
                     <td>@compartimento.Comprimento</td>
                     <td>@compartimento.Largura</td>
-                    @if(compartimento.Disponivel)
-                    {
-                        <td>Sim</td>
-                        <th>#</th>
-                    }
-                    else
-                    {
-                        <td>Não</td>
-                    }
+                    <td>Sim</td>
+                    <td>
+                        <form method="post" asp-controller="Compartimento" asp-action="Escolher">
+                            <input name="numero" value="@compartimento.Numero" type="hidden" style="display: none;">
+                            <button type="submit" class="btn btn-primary">Escolher</button>
+                        </form>
+                    </td>
                 </tr>
             }
             else
@@ -39,20 +38,8 @@
                     <td>@compartimento.Numero</td>
                     <td>@compartimento.Comprimento</td>
                     <td>@compartimento.Largura</td>
-                    @if(compartimento.Disponivel)
-                    {
-                        <td>Sim</td>
-                        <td>
-                            <form asp-controller="Compartimento" action="Escolher">
-                                <input value="@compartimento.Numero" type="hidden" style="display: none;">
-                                <button type="submit">Escolher</button>
-                            </form>
-                        </td>
-                    }
-                    else
-                    {
-                        <td>Não</td>
-                    }
+                    <td>Não</td>
+                    <td>#</td>
                 </tr>
             }
         }

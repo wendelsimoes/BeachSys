@@ -15,6 +15,9 @@ namespace BeachSys.Models
         public bool Disponivel { get; set; } = true;
         [ForeignKey("Usuario")]
         public int? UsuarioID { get; set; }
-        public Usuario Usuario { get; set; }
+        public virtual Usuario Usuario { get; set; }
+        [ForeignKey("Armario")]
+        public int ArmarioID { get; set; }
+        public virtual Armario Armario { get; set; }
     }
 }

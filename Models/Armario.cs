@@ -18,13 +18,13 @@ namespace BeachSys.Models
         [Required(ErrorMessage = "Este campo é obrigatorio")]
         public int PontoY { get; set; }
         public virtual ICollection<Compartimento> Compartimentos { get; set; } = new List<Compartimento>();
+        public int? CompartimentosDisponiveis 
+        { 
+            get { return Compartimentos.Count(c => c.Disponivel); }
+            set {}
+        }
         [ForeignKey("Admin")]
         public int AdminID { get; set; }
-        public Admin Admin { get; set; }
-
-        public int CompartimentosDisponiveis()
-        {
-            return Compartimentos.Count(c => c.Disponivel);
-        }
+        public virtual Admin Admin { get; set; }
     }
 }

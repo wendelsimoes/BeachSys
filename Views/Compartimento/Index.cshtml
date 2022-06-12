@@ -1,0 +1,53 @@
+@model IEnumerable<BeachSys.Models.Compartimento>
+
+@{
+    ViewData["Title"] = "Compartimentos";
+}
+
+<table id="table">
+    <thead>
+        <tr>
+            <th>Numero</th>
+            <th>Comprimento</th>
+            <th>Largura</th>
+            <th>Disponivel</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var compartimento in Model)
+        {
+            @if (compartimento.Disponivel)
+            {
+                <tr>
+                    <td>@compartimento.Numero</td>
+                    <td>@compartimento.Comprimento</td>
+                    <td>@compartimento.Largura</td>
+                    @if(compartimento.Disponivel)
+                    {
+                        <td>Sim</td>
+                    }
+                    else
+                    {
+                        <td>Não</td>
+                    }
+                </tr>
+            }
+            else
+            {
+                <tr style="background-color: #ff8181;">
+                    <td>@compartimento.Numero</td>
+                    <td>@compartimento.Comprimento</td>
+                    <td>@compartimento.Largura</td>
+                    @if(compartimento.Disponivel)
+                    {
+                        <td>Sim</td>
+                    }
+                    else
+                    {
+                        <td>Não</td>
+                    }
+                </tr>
+            }
+        }
+    </tbody>
+</table>

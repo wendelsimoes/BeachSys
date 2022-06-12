@@ -28,7 +28,7 @@ namespace BeachSys.Controllers
                 armario.Admin = admin;
                 _context.Add(armario);
                 _context.SaveChanges();
-                return RedirectToAction("Index", new {cpf = "admin"});
+                return RedirectToAction("Index");
             }
 
             return View(armario);
@@ -41,6 +41,18 @@ namespace BeachSys.Controllers
 
         public IActionResult Index()
         {
+            int usuarioID = Int32.Parse(User.FindFirst("ID").Value);
+            var usuario = _context.Usuarios.FirstOrDefault(u => u.ID == usuarioID);
+
+            if (usuario is Admin)
+            {
+                ViewBag.EhAdmin = true;
+            }
+            else
+            {
+                ViewBag.EhAdmin = false;
+            }
+
             var armarios = _context.Armarios.ToList();
             return View(armarios);
         }

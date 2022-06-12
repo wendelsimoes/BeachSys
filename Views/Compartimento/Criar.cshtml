@@ -1,0 +1,24 @@
+@model BeachSys.Models.Compartimento
+
+@{
+    ViewData["Title"] = "Criar";
+}
+
+<div class="card mx-auto p-3" style="width: 36rem;">
+  <div class="card-body">
+    <form method="post" asp-controller="Compartimento" asp-action="Criar">
+      <div class="mb-3">
+        <label asp-for="Comprimento" class="form-label"></label>
+        <input asp-for="Comprimento" class="form-control">
+        <span asp-validation-for="Comprimento" class="text-danger"></span>
+      </div>
+      <div class="mb-3">
+        <label asp-for="Largura" class="form-label"></label>
+        <input asp-for="Largura" class="form-control">
+        <span asp-validation-for="Largura" class="text-danger"></span>
+      </div>
+      <input type="hidden" name="ArmarioID" value="@ViewBag.ArmarioID">
+      <button type="submit" class="btn btn-primary">Criar</button>
+    </form>
+  </div>
+</div>

@@ -11,6 +11,11 @@
             <th>PontoX</th>
             <th>PontoY</th>
             <th>Compartimentos disponíveis</th>
+            <th>#</th>
+            @if (ViewBag.EhAdmin)
+            {
+                <th>#</th>
+            }
         </tr>
     </thead>
     <tbody>
@@ -20,7 +25,22 @@
                 <td>@armario.Nome</td>
                 <td>@armario.PontoX</td>
                 <td>@armario.PontoY</td>
-                <td>@armario.CompartimentosDisponiveis()</td>
+                <td>@armario.CompartimentosDisponiveis</td>
+                <td><a 
+                asp-controller="Compartimento" 
+                asp-action="Index" 
+                asp-route-armarioID="@armario.ID" 
+                class="btn btn-primary">
+                Listar compartimentos</a></td>
+                @if (ViewBag.EhAdmin)
+                {
+                <td><a 
+                asp-controller="Compartimento" 
+                asp-action="Criar" 
+                asp-route-armarioID="@armario.ID" 
+                class="btn btn-primary">
+                Criar compartimento</a></td>
+                }
             </tr>
         }
     </tbody>

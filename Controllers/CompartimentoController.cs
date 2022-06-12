@@ -25,7 +25,7 @@ namespace BeachSys.Controllers
             if (ModelState.IsValid)
             {
                 var armario = _context.Armarios.FirstOrDefault(a => a.ID == compartimento.ArmarioID);
-                armario.Compartimentos.Add(compartimento);
+                compartimento.Armario = armario;
                 _context.Add(compartimento);
                 _context.SaveChanges();
                 return RedirectToAction("Index", "Armario");

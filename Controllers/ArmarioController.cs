@@ -7,6 +7,7 @@ using BeachSys.Data;
 using BeachSys.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace BeachSys.Controllers
 {
@@ -53,7 +54,7 @@ namespace BeachSys.Controllers
                 ViewBag.EhAdmin = false;
             }
 
-            var armarios = _context.Armarios.ToList();
+            var armarios = _context.Armarios.Include(a => a.Compartimentos).ToList();
             return View(armarios);
         }
     }

@@ -21,6 +21,7 @@ namespace BeachSys.Data
                 {
                     ID = 1,
                     Nome = "admin",
+                    CPF = "admin",
                     Email = "admin"
                 }
             );

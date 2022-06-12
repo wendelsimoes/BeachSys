@@ -1,0 +1,15 @@
+@{
+    ViewData["Title"] = "_Layout";
+}
+
+<div class="card mx-auto p-3" style="width: 36rem;">
+    <div class="card-body">
+        <a asp-controller="Armario" 
+        asp-action="Index" 
+        asp-route-cpf="admin" 
+        class="btn btn-primary">
+            Meus armários
+        </a>
+        <a asp-controller="Armario" asp-action="Criar" class="btn btn-primary">Criar armário</a>
+    </div>
+</div>

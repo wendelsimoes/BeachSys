@@ -1,0 +1,23 @@
+@model BeachSys.Models.Usuario
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="card mx-auto p-3" style="width: 36rem;">
+    <div class="card-body">
+        <form method="post" asp-controller="Usuario" asp-action="Login">
+            <div class="mb-3">
+                <label for="cpf_login" class="form-label">CPF</label>
+                <input id="cpf_login" name="CPF" class="form-control">
+                <span asp-validation-for="CPF" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+    </div>
+    <div class="card-footer text-center py-3">
+        <div class="small">
+            <a asp-controller="Usuario" asp-action="Cadastrar">Não possui uma conta? Fazer cadastro</a>
+        </div>
+    </div>
+</div>

@@ -25,6 +25,7 @@
                     @if(compartimento.Disponivel)
                     {
                         <td>Sim</td>
+                        <th>#</th>
                     }
                     else
                     {
@@ -41,6 +42,12 @@
                     @if(compartimento.Disponivel)
                     {
                         <td>Sim</td>
+                        <td>
+                            <form asp-controller="Compartimento" action="Escolher">
+                                <input value="@compartimento.Numero" type="hidden" style="display: none;">
+                                <button type="submit">Escolher</button>
+                            </form>
+                        </td>
                     }
                     else
                     {

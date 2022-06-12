@@ -28,6 +28,15 @@
                             asp-controller="Compartimento" 
                             asp-action="MeuCompartimento">Meu compartimento</a>
                         </li>
+                        @if(User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" 
+                                asp-area="" 
+                                asp-controller="Usuario" 
+                                asp-action="Sair">Sair</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>

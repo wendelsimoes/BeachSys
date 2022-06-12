@@ -88,6 +88,16 @@ namespace BeachSys.Controllers
             return View();
         }
 
+        public async Task<IActionResult> Sair()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                await HttpContext.SignOutAsync();
+            }
+
+            return RedirectToAction("Login", "Usuario");
+        }
+
         public IActionResult Index()
         {
             return View();

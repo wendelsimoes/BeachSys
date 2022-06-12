@@ -42,13 +42,16 @@
         <a 
         asp-controller="Compartimento" 
         asp-action="Desalocar"
-        asp-route-compartimentoNumero="@Model.Numero">Desalocar</a>
+        asp-route-compartimentoNumero="@Model.Numero" 
+        class="btn btn-primary">Desalocar</a>
     </div>
 }
 else
 {
     <h1>Não alocou o seu?</h1>
     <div>
-        <a asp-controller="Armario" asp-action="Index">Alocar</a>
+        <a asp-controller="Armario" 
+        asp-action="Index" 
+        class="btn btn-primary">Alocar</a>
     </div>
 }

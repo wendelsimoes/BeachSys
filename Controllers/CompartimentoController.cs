@@ -61,7 +61,7 @@ namespace BeachSys.Controllers
                 compartimento.Usuario = usuario;
                 compartimento.Disponivel = false;
                 _context.SaveChanges();
-                return RedirectToAction("Index", "Compartimento");
+                return RedirectToAction("MeuCompartimento", "Compartimento");
             }
             return BadRequest();
         }

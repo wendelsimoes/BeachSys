@@ -29,7 +29,7 @@ namespace BeachSys.Migrations
                 {
                     ID = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Nome = table.Column<string>(nullable: true),
+                    Nome = table.Column<string>(maxLength: 100, nullable: false),
                     PontoX = table.Column<int>(nullable: false),
                     PontoY = table.Column<int>(nullable: false),
                     AdminID = table.Column<int>(nullable: false)
@@ -73,6 +73,11 @@ namespace BeachSys.Migrations
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                 });
+
+            migrationBuilder.InsertData(
+                table: "Usuarios",
+                columns: new[] { "ID", "CPF", "Discriminator", "Email", "Nome" },
+                values: new object[] { 1, "admin", "Admin", "admin", "admin" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Armarios_AdminID",

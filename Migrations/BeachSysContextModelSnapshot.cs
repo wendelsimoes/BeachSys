@@ -27,7 +27,9 @@ namespace BeachSys.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Nome")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .IsRequired()
+                        .HasColumnType("varchar(100) CHARACTER SET utf8mb4")
+                        .HasMaxLength(100);
 
                     b.Property<int>("PontoX")
                         .HasColumnType("int");
@@ -109,6 +111,15 @@ namespace BeachSys.Migrations
                     b.HasBaseType("BeachSys.Models.Usuario");
 
                     b.HasDiscriminator().HasValue("Admin");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            CPF = "admin",
+                            Email = "admin",
+                            Nome = "admin"
+                        });
                 });
 
             modelBuilder.Entity("BeachSys.Models.Armario", b =>
